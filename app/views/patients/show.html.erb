@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
+<p><strong><center><h3>Patient's Page</h3></center></strong></p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @patient.first_name %>
-</p>
+<table class='table-striped table table-bordered table-hover'>
+  <thead>
+ <tr  class="success">
+      <th><center>First name</center></th>
+      <th><center>Last name</center></th>
+      <th><center>Email</center></th>
+      <th><center>Phone</center></th>
+      <th><center>Status</center></th>
+      <th><center>Seen by Doctor</center></th>
+      <th><center>Doctor's email address</center></th>
+      <th><center>Doctor's phone No.</center></th>
+     
+    </tr>
+  </thead>
+   <tbody>
+    
+      <tr>
+        <td><center><%= @patient.first_name %></center></td>
+        <td><center><%= @patient.last_name %></center></td>
+        <td><center><%= @patient.email %></center></td>
+        <td><center><%= @patient.phone %></center></td>
+        <td><center><%= @patient.status %></center></td>
+        <td><center><%= @patient.doctor.first_name %>|<%= @patient.doctor.last_name %></center></td>
+        <td><center><%= @patient.doctor.email %></td>
+        <td><center><%= @patient.doctor.phone_number %></td>
+      </tr>
+  </tbody>
+</table>
+  
 
-<p>
-  <strong>Last name:</strong>
-  <%= @patient.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @patient.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @patient.phone %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @patient.status %>
-</p>
-
-<p>
-  <strong>Doctor:</strong>
-  <%= @patient.doctor %>
-</p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<%= link_to 'Edit', edit_patient_path(@patient),class:"btn btn-success" %> |
+<%= link_to 'Back', patients_path,class:"btn btn-success" %>

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<p><strong><center><h3>Doctor's Page</h3></center></strong></p>
 <p>
   <strong>First name:</strong>
   <%= @doctor.first_name %>
@@ -24,6 +24,19 @@
   <strong>Phone number:</strong>
   <%= @doctor.phone_number %>
 </p>
+    <strong><center><h4>Patients table:</h4></center></strong>
+    <table class='table-striped table table-bordered table-hover'>
+    <tbody>
+   <% @doctor.patients.each do |b| %>
+     <tr>
+     <td><center><%= b.first_name %></center></td>
+     <td><center><%= b.last_name %></center></td>
+     <td><center><%= b.email %></center></td>
+     <td><center><%= b.phone %></center></td>
+     </tr>
+   <%end%>
+   </tbody>
+   </table>
 
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+<%= link_to 'Edit', edit_doctor_path(@doctor), class:"btn btn-success" %> 
+<%= link_to 'Back', doctors_path, class:"btn btn-success" %>
